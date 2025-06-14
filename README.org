@@ -1,0 +1,49 @@
+#+TITLE: modeline-major-mode.el
+#+OPTIONS: toc:nil
+#+OPTIONS: html-postamble:nil
+#+HTML_HEAD: <style>code { font-size: 1.5em; }</style>
+
+A small library for ~doom-modeline~ to display the major-mode icon instead of the text name.
+
+* Features
+
+This package provides a ~doom-modeline~ segment:
+
+- ~modeline-major-mode-icon~: Displays *only* the major-mode icon.
+
+* Installation & Usage
+
+1. Place ~modeline-major-mode.el~ in your Emacs ~load-path~.
+2. Add ~(require 'modeline-major-mode)~ to your Emacs configuration.
+3. Define a custom ~doom-modeline~ layout using one of the new segments.
+
+Using Doom Emacs.
+
+#+begin_src emacs-lisp
+(package! modeline-major-mode
+  :recipe (:host github
+           :repo "rgkirch/modeline-major-mode"))
+#+end_src
+
+The default (as of time of writing) doom modeline with the icon added as the last item.
+
+[[file:~/.config/emacs/.local/straight/repos/doom-modeline/doom-modeline.el::(doom-modeline-def-modeline 'main]]
+
+#+BEGIN_SRC emacs-lisp
+(doom-modeline-def-modeline 'my-main
+  '(eldoc bar window-state workspace-name window-number modals matches follow buffer-info remote-host buffer-position word-count parrot selection-info)
+  '(compilation objed-state misc-info project-name persp-name battery grip irc mu4e gnus github debug repl lsp minor-modes input-method indent-info buffer-encoding process vcs check time modeline-major-mode-icon))
+
+(doom-modeline-set-modeline 'my-main 'default)
+#+END_SRC
+
+
+An unrealistic modeline with only the icon.
+
+#+BEGIN_SRC emacs-lisp
+(doom-modeline-def-modeline 'my-main
+  '()
+  '(modeline-major-mode-icon))
+
+(doom-modeline-set-modeline 'my-main 'default)
+#+END_SRC
