@@ -8,7 +8,7 @@
 ;; Homepage: https://github.com/rgkirch/modeline-major-mode
 ;; Keywords: modeline, doom-modeline, faces, icons
 
-;; Package-Version: 20250614.1
+;; Package-Version: 0.1
 ;; Package-Requires: ((emacs "26.1"))
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
