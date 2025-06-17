@@ -47,3 +47,5 @@ An unrealistic modeline with only the icon.
 
 (doom-modeline-set-modeline 'my-main 'default)
 #+END_SRC
+
+* See [[https://github.com/rgkirch/my-emacs-packages][my other emacs packages]]
